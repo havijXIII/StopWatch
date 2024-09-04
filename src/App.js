@@ -13,11 +13,13 @@ class App extends Component {
             secondmode: false,
             restart: false,
             flagShow: [],
-            massage: 'Ready?!'
+            massage: 'Ready?!',
+            Hshadow: [5, 5, 0, -5, -5, -5, 0, 5],
+            Vshadow: [0, 5, 5, 5, 0, -5, -5, -5],
+            i: 0
         };
         this.intervalTimer = null
     }
-
     timer = () => {
         let milisecond = this.state.milisecond;
         let second = this.state.second;
@@ -43,13 +45,16 @@ class App extends Component {
         . ${this.state.milisecond < 10 ? '0' + this.state.milisecond : this.state.milisecond}`
         )
     }
+
     handlePlay = () => {
+        document.getElementById('shadow').style.animation="pulse 2s ease-in-out infinite"
         if (this.state.isStart === false) {
             this.setState({ secondmode: true, isStart: true, massage: '' })
             this.intervalTimer = setInterval(this.timer, 10);
         }
     }
     handlePause = () => {
+        document.getElementById('shadow').removeAttribute('style')
         clearInterval(this.intervalTimer)
         this.setState({ isStart: false, secondmode: false, restart: true, massage: 'Pause' })
     }
@@ -58,9 +63,10 @@ class App extends Component {
     }
     handleRestart = () => {
         this.handlePause()
-        this.setState({ minute: 0, second: 0, hour: 0, milisecond: 0, flagShow: [null] })
+        this.setState({ minute: 0, second: 0, hour: 0, milisecond: 0, flagShow: [] })
         this.setState({ isStart: false, secondmode: false, restart: false, massage: 'Ready?!' })
     }
+
 
     Play = () => {
         if (this.state.isStart === false && this.state.secondmode === false) {
@@ -105,7 +111,7 @@ class App extends Component {
     render() {
         return (
             <div className='darkmain'>
-                <div className='show'><div>{this.show()}</div>{this.state.massage}</div>
+                <div className='show'><div className='shadow' id='shadow' >{this.show()}<br/>{this.state.massage}</div></div>
                 <div className='handlebtn' id='handlebtn'>
                     <this.Play />
                     <this.restart />
@@ -114,7 +120,7 @@ class App extends Component {
                 </div>
                 <div className='flagshow'>
                     {this.state.flagShow.map(item => (
-                        <div key={Math.random()}>{item}</div>
+                        <div className='lap' key={Math.random()}>Lap {this.state.flagShow.indexOf(item) + 1}<br></br>{item}</div>
                     ))}
                 </div>
             </div>

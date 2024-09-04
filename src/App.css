@@ -1,3 +1,41 @@
+.lap{
+    font-size:20px ;
+    text-align: center;
+}
+.handlebtn{
+    justify-content: center;
+    width: 400px;
+    margin-top: 50px;
+    display: flex;
+}
+.show{
+    box-shadow: #836FFF 0px 0px 20px 20px;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-around;
+    display: grid;
+    border-radius: 400px 200px ;
+    height: 400px;
+    width: 400px;
+}
+.shadow{
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-around;
+    display: grid;
+    border-radius: 400px 200px ;
+    height: 400px;
+    width: 400px;
+}
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px #15f5b988, 0 0 50px #15f5b988;
+    }
+    50% {
+        box-shadow: 0 0 30px #15F5BA, 0 0 80px #15F5BA;
+    }
+}
 .darkmain{
     font-size: x-large;
     align-content: center;
@@ -5,8 +43,8 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    color: #A7D129;
-    background-color: #000000;
+    color: #F0F3FF;
+    background-color: #211951;
 }
 .darkplay{
     display: flex;
@@ -16,48 +54,29 @@
     width: 200px;
 }
 .darkicon{
-    stroke: #A7D129;
-    fill: #A7D129;
+    stroke: #836FFF;
+    fill: #836FFF;
     padding: 20px;
     border-radius: 50px ;
-    border: 5px #829b36 solid ;
+    border: 5px #F0F3FF solid ;
     width: 30px;
     height: 30px;
 }
 .pauseicon{
-    fill: #A7D129;
+    fill: #836FFF;
     padding: 20px;
     border-radius: 50px;
-    border: 5px #829b36 solid;
+    border: 5px #F0F3FF solid;
     width: 30px;
     height: 30px;
 }
 .restarticon{
-    color: #A7D129;
+    color: #836FFF;
     padding: 20px;
     border-radius: 50px;
-    border: 5px #829b36 solid;
+    border: 5px #F0F3FF solid;
     width: 30px;
     height: 30px;
-}
-.show{
-    box-shadow: #829b36 0px 0px 8px 8px;
-    justify-items: center;
-    align-content: center;
-    justify-content: space-around;
-    display: grid;
-    border-radius: 400px 200px ;
-    height: 400px;
-    width: 400px;
-}
-.restart{
-    padding-top: 150px;
-}
-.handlebtn{
-    justify-content: center;
-    width: 400px;
-    margin-top: 50px;
-    display: flex;
 }
 .flagshow{
     justify-content: center;
