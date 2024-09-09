@@ -46,8 +46,13 @@ class App extends Component {
         )
     }
 
+    handleRemove = (e) => {
+        let flag = this.state.flagShow
+        let havij = flag.filter(t => flag.indexOf(t) != e.target.id)
+        this.setState({ flagShow: havij })
+    }
     handlePlay = () => {
-        document.getElementById('shadow').style.animation="pulse 2s ease-in-out infinite"
+        document.getElementById('shadow').style.animation = "pulse 2s ease-in-out infinite"
         if (this.state.isStart === false) {
             this.setState({ secondmode: true, isStart: true, massage: '' })
             this.intervalTimer = setInterval(this.timer, 10);
@@ -111,7 +116,7 @@ class App extends Component {
     render() {
         return (
             <div className='darkmain'>
-                <div className='show'><div className='shadow' id='shadow' >{this.show()}<br/>{this.state.massage}</div></div>
+                <div className='show'><div className='shadow' id='shadow' >{this.show()}<br />{this.state.massage}</div></div>
                 <div className='handlebtn' id='handlebtn'>
                     <this.Play />
                     <this.restart />
@@ -120,10 +125,11 @@ class App extends Component {
                 </div>
                 <div className='flagshow'>
                     {this.state.flagShow.map(item => (
-                        <div className='lap' key={Math.random()}>Lap {this.state.flagShow.indexOf(item) + 1}<br></br>{item}</div>
-                    ))}
+                        <div className='lap' id={this.state.flagShow.indexOf(item)} key={this.state.flagShow.indexOf(item)} onClick={this.handleRemove}>Lap {this.state.flagShow.indexOf(item) + 1}<br></br>{item}</div>
+                    ))
+                    }
                 </div>
-            </div>
+            </div >
         )
     };
 };
