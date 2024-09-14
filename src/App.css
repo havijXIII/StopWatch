@@ -1,3 +1,29 @@
+:root {
+    --box-shadow-dark:#836FFF;
+    --box-shadow-animation:#f0f3ff81;
+    --box-shadow-animation50:#A79BFF;
+    --color:#A79BFF;
+    --bg-color:#211951;
+    --stoke-color:#836FFF;
+    --fill-color:#836FFF;
+    --border-color:#A79BFF;
+    --icon-color:#836FFF;
+    --btn-color:#fff;
+    --btn-bg-color:#836FFF;
+}
+.darkmode{
+    --box-shadow-dark:#15f5ba;
+    --box-shadow-animation:#836FFF;
+    --box-shadow-animation50:#83F4DD;
+    --color:#15F5BA;
+    --bg-color:#7C93C3;
+    --stoke-color:#15F5BA;
+    --fill-color:#15F5BA;
+    --border-color:#83F4DD;
+    --icon-color:#15F5BA;
+    --btn-color:#000;
+    --btn-bg-color:#15F5BA;
+}
 .lap{
     font-size:20px ;
     text-align: center;
@@ -8,8 +34,10 @@
     margin-top: 50px;
     display: flex;
 }
+.darkshow{
+    box-shadow: var(--box-shadow-dark) 0px 0px 40px 20px;
+}
 .show{
-    box-shadow: #836FFF 0px 0px 40px 20px;
     justify-items: center;
     align-content: center;
     justify-content: space-around;
@@ -30,51 +58,55 @@
 }
 @keyframes pulse {
     0%, 100% {
-        box-shadow: 0 0 20px #15f5b988, 0 0 50px #15f5b988;
+        box-shadow: 0 0 20px var(--box-shadow-animation), 0 0 50px var(--box-shadow-animation50);
     }
     50% {
-        box-shadow: 0 0 30px #15F5BA, 0 0 80px #15F5BA;
+        box-shadow: 0 0 30px var(--box-shadow-animation50), 0 0 80px var(--box-shadow-animation);
     }
 }
-.darkmain{
+.main{
+    color: var(--color);
+    background-color: var(--bg-color);
     font-size: x-large;
     align-content: center;
     height: 100vh;
     display: grid;
     justify-content: center;
     align-items: center;
-    color: #F0F3FF;
-    background-color: #211951;
 }
-.darkplay{
+.btn{
+    background: var(--btn-bg-color);
+    color: var(--btn-color);
+    border: none;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    border-radius: 50px;
+}
+.play{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 200px;
 }
-.darkicon{
-    stroke: #836FFF;
-    fill: #836FFF;
+.icon{
+    stroke: var(--stoke-color);
+    fill: var(--fill-color);
     padding: 20px;
     border-radius: 50px ;
-    border: 5px #F0F3FF solid ;
+    border: 5px var(--border-color) solid ;
     width: 30px;
     height: 30px;
 }
-.pauseicon{
-    fill: #836FFF;
-    padding: 20px;
-    border-radius: 50px;
-    border: 5px #F0F3FF solid;
-    width: 30px;
-    height: 30px;
-}
+
 .restarticon{
-    color: #836FFF;
+    color: var(--icon-color);
     padding: 20px;
     border-radius: 50px;
-    border: 5px #F0F3FF solid;
+    border: 5px var(--border-color) solid;
     width: 30px;
     height: 30px;
 }
